@@ -32,6 +32,15 @@ app.get("/activities",(req, res)=>{
     })
 })
 
+// show Project
+app.get("/project",(req, res)=>{
+    const sql = "SELECT * FROM services ";
+    db.query(sql,(err,data)=>{
+        if(err) return app.json("Error");
+        return res.json(data);
+    })
+})
+
 // show Events
 app.get("/events",(req, res)=>{
     const sql = "SELECT * FROM portfolios";

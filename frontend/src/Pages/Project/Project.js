@@ -1,10 +1,14 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const Project = () => {
-    return (
-       
-            	
-			
+	const [project, setProject]=useState([]);
+    useEffect(()=>{
+    axios.get('http://localhost:8081/project')
+    .then(res=> setProject(res.data))
+    .catch(err=> console.log(err));
+    },[])
+    return (       
 			<main class="main">
 				<section class="promo-primary">
 					<picture>
@@ -27,140 +31,24 @@ const Project = () => {
 				<section class="section causes-inner">
 					<div class="container">
 						<div class="row offset-margin">
-							<div class="col-md-6 col-lg-4">
+						{
+                            project.map((data, i)=>( 
+							<div key={i} class="col-md-6 col-lg-4">
 								<div class="causes-item causes-item--primary">
 									<div class="causes-item__body">
 										<div class="causes-item__top">
-											<h6 class="causes-item__title"> <a href="cause-details.html">Water Delivery in Africa</a></h6>
+											<h6 class="causes-item__title"> <a href="cause-details.html">{data.title}</a></h6>
 											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
 										</div>
 										<div class="causes-item__img">
-											<div class="causes-item__badge" style={{background:'#49C2DF'}}>Water Delivery</div><img class="img--bg" src="../../../assets/img/causes_1.jpg" alt="img"/>
+											<div class="causes-item__badge" style={{background:'#49C2DF'}}>Water Delivery</div><img class="img--bg" src={data.main_image} alt="img"/>
 										</div>
 										
 									</div><a class="button causes-item__button button--primary" href="cause-details.html">+ Details</a>
 								</div>
 							</div>
-							<div class="col-md-6 col-lg-4">
-								<div class="causes-item causes-item--primary">
-									<div class="causes-item__body">
-										<div class="causes-item__top">
-											<h6 class="causes-item__title"> <a href="cause-details.html">Health in other Countries</a></h6>
-											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
-										</div>
-										<div class="causes-item__img">
-											<div class="causes-item__badge" style={{background:'#F36F8F'}}>Medicine</div><img class="img--bg" src="../../../assets/img/causes_2.jpg" alt="img"/>
-										</div>
-										<div class="causes-item__lower">
-											<div class="progress-bar">
-												<div class="progress-bar__inner" style={{width:'23%'}}>
-													<div class="progress-bar__value">23%</div>
-												</div>
-											</div>
-											<div class="causes-item__details-holder">
-												<div class="causes-item__details-item"><span>Goal: </span><span>14 000$</span></div>
-												<div class="causes-item__details-item text-right"><span>Pledged: </span><span>6 098$</span></div>
-											</div>
-										</div>
-									</div><a class="button causes-item__button button--primary" href="#">+ Donate</a>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4">
-								<div class="causes-item causes-item--primary">
-									<div class="causes-item__body">
-										<div class="causes-item__top">
-											<h6 class="causes-item__title"> <a href="cause-details.html">We Build and Create</a></h6>
-											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
-										</div>
-										<div class="causes-item__img">
-											<div class="causes-item__badge" style={{background:'#2EC774'}}>Education</div><img class="img--bg" src="../../../assets/img/causes_3.jpg" alt="img"/>
-										</div>
-										<div class="causes-item__lower">
-											<div class="progress-bar">
-												<div class="progress-bar__inner" style={{width:'51%'}}>
-													<div class="progress-bar__value">51%</div>
-												</div>
-											</div>
-											<div class="causes-item__details-holder">
-												<div class="causes-item__details-item"><span>Goal: </span><span>150 000$</span></div>
-												<div class="causes-item__details-item text-right"><span>Pledged: </span><span>76 500$</span></div>
-											</div>
-										</div>
-									</div><a class="button causes-item__button button--primary" href="#">+ Donate	</a>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4">
-								<div class="causes-item causes-item--primary">
-									<div class="causes-item__body">
-										<div class="causes-item__top">
-											<h6 class="causes-item__title"> <a href="cause-details.html">Healthy Food</a></h6>
-											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
-										</div>
-										<div class="causes-item__img">
-											<div class="causes-item__badge" style={{background:'#F8AC3A'}}>Food</div><img class="img--bg" src="../../../assets/img/causes_4.jpg" alt="img"/>
-										</div>
-										<div class="causes-item__lower">
-											<div class="progress-bar">
-												<div class="progress-bar__inner" style={{width:'42%'}}>
-													<div class="progress-bar__value">42%</div>
-												</div>
-											</div>
-											<div class="causes-item__details-holder">
-												<div class="causes-item__details-item"><span>Goal: </span><span>220 000$</span></div>
-												<div class="causes-item__details-item text-right"><span>Pledged: </span><span>95 200$</span></div>
-											</div>
-										</div>
-									</div><a class="button causes-item__button button--primary" href="#">+ Donate	</a>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4">
-								<div class="causes-item causes-item--primary">
-									<div class="causes-item__body">
-										<div class="causes-item__top">
-											<h6 class="causes-item__title"> <a href="cause-details.html">Clean Water in India</a></h6>
-											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
-										</div>
-										<div class="causes-item__img">
-											<div class="causes-item__badge" style={{background:'#49C2DF'}}>Water Delivery</div><img class="img--bg" src="../../../assets/img/causes_5.jpg" alt="img"/>
-										</div>
-										<div class="causes-item__lower">
-											<div class="progress-bar">
-												<div class="progress-bar__inner" style={{width:'65%'}}>
-													<div class="progress-bar__value">65%</div>
-												</div>
-											</div>
-											<div class="causes-item__details-holder">
-												<div class="causes-item__details-item"><span>Goal: </span><span>80 000$</span></div>
-												<div class="causes-item__details-item text-right"><span>Pledged: </span><span>52 200$</span></div>
-											</div>
-										</div>
-									</div><a class="button causes-item__button button--primary" href="#">+ Donate</a>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-4">
-								<div class="causes-item causes-item--primary">
-									<div class="causes-item__body">
-										<div class="causes-item__top">
-											<h6 class="causes-item__title"> <a href="cause-details.html">New Books for Children</a></h6>
-											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
-										</div>
-										<div class="causes-item__img">
-											<div class="causes-item__badge" style={{background:'#2EC774'}}>Education</div><img class="img--bg" src="../../../assets/img/causes_6.jpg" alt="img"/>
-										</div>
-										<div class="causes-item__lower">
-											<div class="progress-bar">
-												<div class="progress-bar__inner" style={{width:'95%'}}>
-													<div class="progress-bar__value">95%</div>
-												</div>
-											</div>
-											<div class="causes-item__details-holder">
-												<div class="causes-item__details-item"><span>Goal: </span><span>20 000$</span></div>
-												<div class="causes-item__details-item text-right"><span>Pledged: </span><span>18 000$</span></div>
-											</div>
-										</div>
-									</div><a class="button causes-item__button button--primary" href="#">+ Donate</a>
-								</div>
-							</div>
+))
+}
 						</div>
 					</div>
 					<div class="container">
