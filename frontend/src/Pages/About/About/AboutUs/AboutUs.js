@@ -1,9 +1,9 @@
 import React from 'react';
 
-const About = () => {
-    return (
-        <div>
-          	<main className="main">
+const AboutUs = () => {
+	return (
+		<div>
+			 	<main className="main">
 				<section className="promo-primary">
 					<picture>
 						<source srcset="../../../assets/img/about.jpg" media="(min-width: 992px)"/><img className="img--bg" src="../../../assets/img/about.jpg" alt="img"/>
@@ -114,8 +114,8 @@ const About = () => {
 				
 				
 			</main>
-        </div>
-    );
+		</div>
+	);
 };
 
-export default About;
+export default AboutUs;

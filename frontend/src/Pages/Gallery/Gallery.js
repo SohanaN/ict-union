@@ -1,6 +1,14 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const Gallery = () => {
+	const [gallery, setGallery]=useState([]);
+    useEffect(()=>{
+    axios.get('http://localhost:8081/gallery')
+    .then(res=> setGallery(res.data))
+    .catch(err=> console.log(err));
+    },[])
+
     return (
      
 			<main class="main">
@@ -39,23 +47,13 @@ const Gallery = () => {
 						</div>
 					</div>
 					<div class="row no-gutters gallery-masonry">
-						<div class="col-6 col-md-4 gallery-masonry__item category_1"><a class="gallery-masonry__img gallery-masonry__item--height-2" href="../../../assets/img/gallery_1.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_1.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-						<div class="col-6 col-md-4 gallery-masonry__item category_1"><a class="gallery-masonry__img gallery-masonry__item--height-2" href="../../../assets/img/gallery_2.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_2.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-						<div class="col-6 col-md-4 gallery-masonry__item category_2"><a class="gallery-masonry__img gallery-masonry__item--height-2" href="../../../assets/img/gallery_3.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_3.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-						<div class="col-6 col-md-4 gallery-masonry__item category_2"><a class="gallery-masonry__img gallery-masonry__item--height-2" href="../../../assets/img/gallery_4.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_4.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-						<div class="col-6 col-md-8 gallery-masonry__item category_3"><a class="gallery-masonry__img gallery-masonry__item--height-1" href="../../../assets/img/gallery_5.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_5.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-						<div class="col-6 col-md-4 gallery-masonry__item category_3"><a class="gallery-masonry__img gallery-masonry__item--height-2" href="../../../assets/img/gallery_6.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_6.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-						<div class="col-6 col-md-8 gallery-masonry__item category_4"><a class="gallery-masonry__img gallery-masonry__item--height-3" href="../../../assets/img/gallery_7.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_7.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-						<div class="col-6 col-md-4 gallery-masonry__item category_4"><a class="gallery-masonry__img gallery-masonry__item--height-2" href="../../../assets/img/gallery_8.jpg" data-fancybox="gallery"><img class="img--bg" src="../../../assets/img/gallery_8.jpg" alt="img"/>
-							<h6 class="gallery-masonry__description">He Need Your Protection</h6></a></div>
-					</div>
+					{
+                            gallery.map((data, i)=>( 
+						<div key={i} class="col-6 col-md-4 gallery-masonry__item category_1"><a class="gallery-masonry__img gallery-masonry__item--height-2" href="../../../assets/img/gallery_1.jpg" data-fancybox="gallery"><img class="img--bg" src={data.image} alt="img"/>
+							<h6 class="gallery-masonry__description">{data.title}</h6></a></div>
+								))
+							}
+					</div>				
 					<div class="container">
 						<div class="row">
 							<div class="col-12 text-center"><a class="button gallery__button button--primary" href="#">More Images</a></div>

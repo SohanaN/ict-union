@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     database: "ict"
 })
 
-// show slider
+// show Slider
 app.get("/",(req, res)=>{
     const sql = "SELECT * FROM sliders";
     db.query(sql,(err,data)=>{
@@ -23,18 +23,54 @@ app.get("/",(req, res)=>{
     })
 })
 
-// show activities
+// show Activities
 app.get("/activities",(req, res)=>{
-    const sql = "SELECT * FROM services";
+    const sql = "SELECT id, title FROM services limit 2";
     db.query(sql,(err,data)=>{
         if(err) return app.json("Error");
         return res.json(data);
     })
 })
 
-// show portfolios
+// show Events
 app.get("/events",(req, res)=>{
     const sql = "SELECT * FROM portfolios";
+    db.query(sql,(err,data)=>{
+        if(err) return app.json("Error");
+        return res.json(data);
+    })
+})
+
+// show Communities
+app.get("/communities",(req, res)=>{
+    const sql = "SELECT * FROM portfolios";
+    db.query(sql,(err,data)=>{
+        if(err) return app.json("Error");
+        return res.json(data);
+    })
+})
+
+// show Team
+app.get("/team",(req, res)=>{
+    const sql = "SELECT * FROM members";
+    db.query(sql,(err,data)=>{
+        if(err) return app.json("Error");
+        return res.json(data);
+    })
+})
+
+// show Work Plan
+app.get("/workPlan",(req, res)=>{
+    const sql = "SELECT * FROM pages";
+    db.query(sql,(err,data)=>{
+        if(err) return app.json("Error");
+        return res.json(data);
+    })
+})
+
+// show Gallery
+app.get("/gallery",(req, res)=>{
+    const sql = "SELECT * FROM galleries";
     db.query(sql,(err,data)=>{
         if(err) return app.json("Error");
         return res.json(data);

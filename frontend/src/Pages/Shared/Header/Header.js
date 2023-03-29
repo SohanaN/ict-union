@@ -25,7 +25,7 @@ const Header = () => {
                                         <li><Link to="/about"><span>Vision</span></Link></li>
                                         <li> <Link to="/about"><span>Goal</span></Link></li>
                                         <li> <Link to="/about"><span>Objectives</span></Link></li>
-                                        <li> <Link to="/about"><span>Work Plan</span></Link></li>
+                                        <li> <Link to="/workPlan"><span>Work Plan</span></Link></li>
                                         <li><Link to="/team"><span>Team</span></Link></li>
                         </ul>
                         {/* <!-- sub menu end--> */}
@@ -111,7 +111,7 @@ const Header = () => {
                                     <ul className="main-menu__sub-list sub-list--style-2">
                                         
                                         <li> <Link to="/about"><span>Objectives</span></Link></li>
-                                        <li> <Link to="/about"><span>Work Plan</span></Link></li>
+                                        <li> <Link to="/workPlan"><span>Work Plan</span></Link></li>
                                         <li><Link to="/team"><span>Team</span></Link></li>
                                     </ul>
                                     {/* <!-- sub menu end--> */}

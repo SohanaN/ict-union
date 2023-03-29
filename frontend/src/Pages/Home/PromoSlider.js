@@ -27,10 +27,10 @@ const PromoSlider = () => {
                                         <div className="align-container">
                                             <div className="align-container__item">
                                                 <div className="promo-slider__wrapper-1">
-                                                    <h2 className="promo-slider__title"><span>We Help Animals</span><br /><span>Around the world</span></h2>
+                                                    <h2 className="promo-slider__title"><span>{data.title}</span></h2>
                                                 </div>
                                                 <div className="promo-slider__wrapper-2">
-                                                    <p className="promo-slider__subtitle">Gray eel-catfish longnose whiptail catfish smalleye squaretail queen danio unicorn fish shortnose greeneye fusilier fish silver carp nibbler sharksucker tench lookdown catfish</p>
+                                                    <p className="promo-slider__subtitle">{data.text}</p>
                                                 </div>
                                                 <div className="promo-slider__wrapper-3"><a className="button promo-slider__button button--primary" href="#">Discover</a></div>
                                             </div>

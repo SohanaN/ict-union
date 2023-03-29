@@ -1,6 +1,13 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const Communities = () => {
+	const [communities, setCommunities]=useState([]);
+    useEffect(()=>{
+    axios.get('http://localhost:8081/communities')
+    .then(res=> setCommunities(res.data))
+    .catch(err=> console.log(err));
+    },[])
     return (
         <div>
             <main class="main">
@@ -69,22 +76,11 @@ const Communities = () => {
 						<div class="row">
 							<div class="col-12">
 								<ul class="donors-list">
-									<li class="donors-list__item"><a class="donors-list__link" href="#">André Saint-Jacques</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Daniel Lamarre</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Outbox Technology</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Tata Trusts</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Antonio Esfandiari</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Fondation Daniel Lamarre</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Paul G. Desmarais</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">The Estate of Michael Jackson</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Bearfoot Bistro</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Gianni Kovacevic</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Peter Lik Fine Art</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Tix4Tonight. LLC</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">The Bennett Family</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Global affairs Canada</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Richard MacDonald Studio</a></li>
-									<li class="donors-list__item"><a class="donors-list__link" href="#">Treasure Island</a></li>
+								{
+                            communities.map((data, i)=>(    
+									<li key={i} class="donors-list__item"><a class="donors-list__link" href="#">{data.client_name}</a></li>
+									))
+								}	
 								</ul>
 							</div>
 						</div>
