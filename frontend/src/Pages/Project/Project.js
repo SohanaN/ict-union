@@ -41,7 +41,7 @@ const Project = () => {
 											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
 										</div>
 										<div class="causes-item__img">
-											<div class="causes-item__badge" style={{background:'#49C2DF'}}>Water Delivery</div><img class="img--bg" src={data.main_image} alt="img"/>
+											<div class="causes-item__badge" style={{background:'#49C2DF'}}>{data.title}</div><img class="img--bg" src={data.main_image} alt="img"/>
 										</div>
 										
 									</div><a class="button causes-item__button button--primary" href="cause-details.html">+ Details</a>
