@@ -120,7 +120,7 @@ const Header = () => {
 
                                 </li>
 
-                                <li className="main-menu__item main-menu__item--has-child"><Link to="" className="main-menu__link" ><span>Project</span></Link>
+                                <li className="main-menu__item main-menu__item--has-child"><Link to="/project" className="main-menu__link" ><span>Project</span></Link>
                                     {/* <!-- sub menu start--> */}
                                     <ul className="main-menu__sub-list">
                                         <li><Link to="/project"><span>Ongoing</span></Link></li>

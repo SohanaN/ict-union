@@ -38,7 +38,7 @@ const Project = () => {
 									<div class="causes-item__body">
 										<div class="causes-item__top">
 											<h6 class="causes-item__title"> <a href="cause-details.html">{data.title}</a></h6>
-											<p>Sharksucker sea toad candiru rocket danio tilefish stingray deepwater stingray Sacramento splittail</p>
+											{/* <p>{data.content}</p> */}
 										</div>
 										<div class="causes-item__img">
 											<div class="causes-item__badge" style={{background:'#49C2DF'}}>{data.title}</div><img class="img--bg" src={data.main_image} alt="img"/>

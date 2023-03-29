@@ -51,7 +51,8 @@ const Activities = () => {
 												<h2 class="heading__title"><span>{data.title} </span>		
 												</h2>
 											</div>
-											<p> {data.meta_description}</p><a class="button stories-item__button button--primary" href="storie-details.html">Read Story</a>
+											{/* <p> {data.content}</p> */}
+											<a class="button stories-item__button button--primary" href="storie-details.html">Read Story</a>
 										</div>
 									</div>
 								</div>

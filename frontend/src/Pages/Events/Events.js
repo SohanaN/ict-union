@@ -47,7 +47,7 @@ const Events = () => {
 											<div class="col-lg-7 col-xl-8">
 												<div class="upcoming-item__description">
 													<h6 class="upcoming-item__title"><a href="event-details.html">{data.title}</a></h6>
-													<p>{data.meta_description}</p>
+													{/* <p>{data.content}</p> */}
 													<div class="upcoming-item__details">
 														<p>
 															<svg class="icon">

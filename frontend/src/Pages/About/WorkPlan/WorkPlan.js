@@ -60,7 +60,7 @@ const WorkPlan = () => {
 							<div className="col-lg-6 col-xl-5">
                                 <h2>{data.title}</h2>
 								<h4 className="about-us__subtitle">{data.subtitle}</h4>
-								<p>training, research, awareness and innovation in every spare of life and society to reach the goal of modern technology-friendly country and the world community at large to boost up overall growth, development and peace.</p>								
+								{/* <p>{data.body}</p>								 */}
 							</div>
 							<div className="col-lg-6 offset-xl-1">
 								<div className="about-us__text-aside">{data.name}</div>
